@@ -24,3 +24,157 @@
 
 
 
+
+body {
+    background-color: var(--White);
+    width: 100vw;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+    width: 100%;
+    font-size: 1.4rem;
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+}
+
+.heading {
+    font-weight: var(--weight-200);
+    font-size: 1.4rem;
+    color: var(--Grey-400);
+    margin-bottom: 0.5rem;
+}
+
+.powered {
+    color: var(--Grey-500);
+    font-weight: var(--weight-600);
+    font-size: 1.37rem;
+    margin-bottom: 1rem;
+}
+
+.about {
+    color: var(--Grey-400);
+    font-weight: var(--weight-400);
+    line-height: 1.6;
+    max-width: 30rem;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--White);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-top: 0.3rem solid; 
+    width: 100%;
+    max-width: 22rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 2rem auto;
+}
+
+.card .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    align-self: flex-end
+}
+
+.name {
+    font-weight: var(--weight-600);
+    color: var(--Grey-500);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-weight: var(--weight-400);
+    color: var(--Grey-400);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.supervisor {
+    border-color: var(--Cyan);
+}
+
+.team-builder {
+    border-color: var(--Red);
+}
+
+.karma {
+    border-color: var(--Orange);
+}
+
+.calculator {
+    border-color: var(--Blue);
+}
+
+.center {
+    display: none;
+}
+
+.corner {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-areas:
+            "top-left team-builder top-right"
+            "supervisor center calculator"
+            "bottom-left karma bottom-right";
+    }
+
+    .card {
+        min-width: 20.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .supervisor {
+        grid-area: supervisor;
+        align-self: end;
+        margin-bottom: 0;
+    }
+
+    .team-builder {
+        grid-area: team-builder;
+        align-self: start;
+        margin-bottom: 0;
+        position: relative;
+        top: 8rem;
+    }
+
+    .karma {
+        grid-area: karma;
+        align-self: start;
+        margin-bottom: 0;
+        position: relative;
+        top: -8rem;
+    }
+
+    .calculator {
+        grid-area: calculator;
+        align-self: end;
+        margin-bottom: 0;
+    }
+
+    .center {
+        grid-area: center;
+    }
+
+    .card:hover {
+        transform: translateY(-1rem);
+    }
+}
